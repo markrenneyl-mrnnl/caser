@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kylie Gwen Caser - Personal Portfolio">
+  <title>Kylie Gwen Caser | Personal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+  <div id="pageLoader" aria-label="Loading portfolio"><div class="loader-inner"><div class="loader-logo">KGC<span>.</span></div><div class="loader-line"></div><div class="loader-text">Loading portfolio</div></div></div>
+  <div class="scroll-progress" id="scrollProgress"></div><div class="cursor-glow" id="cursorGlow"></div>
+  <div class="background-effects" id="backgroundEffects"><div class="grid-glow"></div><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orb orb-three"></div></div>
+
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#home" class="logo">KGC<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#journey">Journey</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☾</button>
+        <button class="animation-toggle" id="themePicker" aria-label="Choose color theme">🎨</button>
+        <button class="animation-toggle" id="animationToggle" aria-label="Toggle animations">✨</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="animation-panel" id="animationPanel">
+    <div class="panel-title">Animation Controls</div>
+    <label class="switch-row">
+      <span>Background particles</span>
+      <input type="checkbox" id="particlesToggle" checked>
+      <span class="switch"></span>
+    </label>
+    <label class="switch-row">
+      <span>Scroll animations</span>
+      <input type="checkbox" id="scrollToggle" checked>
+      <span class="switch"></span>
+    </label>
+    <label class="range-row">
+      <span>Animation speed</span>
+      <input type="range" id="speedControl" min="0.5" max="2" step="0.1" value="1">
+    </label>
+  </div>
+
+  <div class="animation-panel" id="themePanel">
+    <div class="panel-title">Appearance</div>
+    <p class="panel-label">Accent color</p>
+    <div class="swatch-grid"><button class="swatch" data-theme="ocean" style="--c:#356b8c" aria-label="Ocean theme"><i></i><span>Ocean</span></button><button class="swatch" data-theme="rose" style="--c:#c8456c" aria-label="Rose theme"><i></i><span>Rose</span></button><button class="swatch" data-theme="emerald" style="--c:#2f8f68" aria-label="Emerald theme"><i></i><span>Emerald</span></button><button class="swatch" data-theme="violet" style="--c:#7c5cc4" aria-label="Violet theme"><i></i><span>Violet</span></button><button class="swatch" data-theme="sunset" style="--c:#d9772b" aria-label="Sunset theme"><i></i><span>Sunset</span></button><button class="swatch" data-theme="graphite" style="--c:#4b5563" aria-label="Graphite theme"><i></i><span>Graphite</span></button></div>
+    <p class="panel-label">Background color</p>
+    <div class="bg-grid"><button class="bg-dot" data-bg="#ffffff" style="--c:#ffffff" title="White" aria-label="White background"></button><button class="bg-dot" data-bg="#f5f7fa" style="--c:#f5f7fa" title="Snow" aria-label="Snow background"></button><button class="bg-dot" data-bg="#fbf5e9" style="--c:#fbf5e9" title="Cream" aria-label="Cream background"></button><button class="bg-dot" data-bg="#eaf6f0" style="--c:#eaf6f0" title="Mint" aria-label="Mint background"></button><button class="bg-dot" data-bg="#f0ecfa" style="--c:#f0ecfa" title="Lavender" aria-label="Lavender background"></button><button class="bg-dot" data-bg="#fcecef" style="--c:#fcecef" title="Blush" aria-label="Blush background"></button><button class="bg-dot" data-bg="#e8f3fb" style="--c:#e8f3fb" title="Sky" aria-label="Sky background"></button><button class="bg-dot" data-bg="#1e2733" style="--c:#1e2733" title="Slate" aria-label="Slate background"></button><button class="bg-dot" data-bg="#0f1b2d" style="--c:#0f1b2d" title="Navy" aria-label="Navy background"></button><button class="bg-dot" data-bg="#181a1f" style="--c:#181a1f" title="Charcoal" aria-label="Charcoal background"></button><button class="bg-dot" data-bg="#241830" style="--c:#241830" title="Plum" aria-label="Plum background"></button><button class="bg-dot" data-bg="#000000" style="--c:#000000" title="Black" aria-label="Black background"></button></div>
+    <div class="bg-custom"><label for="customBg">Custom color</label><input type="color" id="customBg" value="#eef3f7"><button class="mini-btn" id="bgReset" type="button">Reset</button></div>
+    <p class="panel-label" style="margin-top:1rem">Layout</p>
+    <div class="layout-switch"><button class="mini-btn" data-layout="book" type="button">📖 Book</button><button class="mini-btn" data-layout="scroll" type="button">📜 Scroll</button></div>
+    <p class="panel-note">Text and cards adjust automatically for light or dark backgrounds.</p>
+  </div>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-content container">
+        <div class="hero-text reveal">
+          <p class="eyebrow">WELCOME TO MY WEBSITE</p>
+          <h1>Hello, I'm <span>Kylie Gwen</span>.</h1>
+          <h2>I'm a <span class="role-typed" id="roleTyped">BSIT Student</span><span class="typing-cursor">|</span></h2>
+          <p class="hero-description">
+            I enjoy creating simple, useful, and responsive digital experiences.
+            This website showcases my skills, projects, and interests in information technology.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn primary" href="#projects">View My Projects</a>
+            <a class="btn secondary" href="#contact">Contact Me</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong data-count="3">0</strong><span>Projects</span></div>
+            <div><strong data-count="4">0</strong><span>Leadership Roles</span></div>
+            <div><strong data-count="5">0</strong><span>Core Skills</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="avatar">
+            <span class="ring ring-glow"></span><span class="ring ring-spin"></span><span class="ring ring-dash"></span>
+            <span class="orbit o1"><i></i></span><span class="orbit o2"><i></i></span><span class="orbit o3"><i></i></span>
+            <div class="photo-frame main-photo"><img src="images/profile-photo-1.png" alt="Kylie Gwen profile photo"></div>
+            <span class="badge b1">&lt;/&gt;</span><span class="badge b2">IT</span>
+          </div>
+          <h3>Personal Portfolio</h3>
+          <p>Web Development • UI Design • IT Projects</p>
+          <div class="status"><span></span> Available for learning & collaboration</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">ABOUT ME</p>
+          <h2>A little about myself</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>I am an Information Technology student interested in web development, software projects, networking, and practical technology solutions.</p>
+            <p>I like learning through hands-on projects and improving my skills by designing websites and developing systems that are simple and easy to use.</p>
+          </div>
+          <div class="about-photo reveal">
+            <img src="images/profile-photo-2.png" alt="Kylie Gwen second profile photo">
+            <div class="photo-caption">
+              <strong>Hi, I'm Kylie Gwen 👋</strong>
+              <span>Student • Creator • IT Enthusiast</span>
+            </div>
+          </div>
+          <div class="info-card reveal">
+            <div><strong>Education</strong><span>BS Information Technology</span></div>
+            <div><strong>Focus</strong><span>Web & Software Development</span></div>
+            <div><strong>Interests</strong><span>Technology, Travel, Sports & Games</span></div>
+            <div><strong>Goal</strong><span>Build useful technology solutions</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">MY SKILLS</p>
+          <h2>What I can work with</h2>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card reveal"><div class="icon">01</div><h3>Web Development</h3><p>HTML, CSS, JavaScript, responsive layouts, navigation, and interactive web elements.</p><div class="meter-label"><span>Proficiency</span><span>85%</span></div><div class="meter"><i style="--lvl:85%"></i></div></article>
+          <article class="skill-card reveal"><div class="icon">02</div><h3>UI & Design</h3><p>Clean layouts, visual hierarchy, simple interfaces, and user-friendly page structures.</p><div class="meter-label"><span>Proficiency</span><span>78%</span></div><div class="meter"><i style="--lvl:78%"></i></div></article>
+          <article class="skill-card reveal"><div class="icon">03</div><h3>Database Projects</h3><p>Basic database design and integration for academic and small application projects.</p><div class="meter-label"><span>Proficiency</span><span>70%</span></div><div class="meter"><i style="--lvl:70%"></i></div></article>
+          <article class="skill-card reveal"><div class="icon">04</div><h3>IT & Networking</h3><p>Basic server concepts, local hosting, networking fundamentals, and system administration tasks.</p><div class="meter-label"><span>Proficiency</span><span>65%</span></div><div class="meter"><i style="--lvl:65%"></i></div></article>
+        </div>
+        <div class="tools reveal"><p class="eyebrow">TOOLS &amp; TECHNOLOGIES</p><div class="marquee"><div class="marquee-track"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Java</span><span>MySQL</span><span>Arduino</span><span>Canva</span><span>MS Word</span><span>MS PowerPoint</span><span>Networking</span><span>Responsive Design</span><span>UI Layout</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Java</span><span>MySQL</span><span>Arduino</span><span>Canva</span><span>MS Word</span><span>MS PowerPoint</span><span>Networking</span><span>Responsive Design</span><span>UI Layout</span></div></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section-heading reveal"><p class="eyebrow">MY JOURNEY</p><h2>Education &amp; leadership</h2></div>
+        <div class="timeline">
+          <div class="t-item reveal"><span class="t-dot"></span><div class="t-card"><small>EDUCATION</small><h3>BS Information Technology</h3><p>King's College of the Philippines–Bambang, Inc. Building skills in web development, databases, networking, and software projects.</p></div></div>
+          <div class="t-item reveal"><span class="t-dot"></span><div class="t-card"><small>LEADERSHIP</small><h3>Student Officer — ICSO Department</h3><p>Supporting department activities and helping fellow IT students.</p></div></div>
+          <div class="t-item reveal"><span class="t-dot"></span><div class="t-card"><small>LEADERSHIP</small><h3>Treasurer — Main Department Organization</h3><p>Responsible for handling organization funds with accuracy and transparency.</p></div></div>
+          <div class="t-item reveal"><span class="t-dot"></span><div class="t-card"><small>LEADERSHIP</small><h3>Secretary — Indigenous Group Organization</h3><p>Maintained records, documentation, and communication for the group.</p></div></div>
+          <div class="t-item reveal"><span class="t-dot"></span><div class="t-card"><small>EARLIER</small><h3>Student Officer — Dupax del Sur National High School</h3><p>Early leadership experience that built teamwork and responsibility.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">PROJECTS</p>
+          <h2>Selected academic projects</h2>
+        </div>
+        <div class="projects-resume-layout">
+          <div class="projects-grid">
+            <article class="project-card reveal"><div class="project-number">01</div><h3>Grocery Store POS</h3><p>A standalone point-of-sale concept designed for managing products, sales, users, and basic payment transactions.</p><ul class="features"><li>Product &amp; inventory management</li><li>Sales and user accounts</li><li>Payment transactions</li></ul><div class="tags"><span>Java</span><span>MySQL</span><span>Desktop App</span></div></article>
+            <article class="project-card reveal"><div class="project-number">02</div><h3>IoT Smart Parking</h3><p>An Arduino-based parking system using ultrasonic sensors, LCD display, LEDs, buzzer, and servo barriers.</p><ul class="features"><li>Ultrasonic slot detection</li><li>LCD, LED &amp; buzzer feedback</li><li>Servo-controlled barriers</li></ul><div class="tags"><span>Arduino</span><span>IoT</span><span>Sensors</span></div></article>
+            <article class="project-card reveal"><div class="project-number">03</div><h3>Responsive Portfolio</h3><p>A responsive personal website designed to demonstrate HTML, CSS, JavaScript, animation, and deployment skills.</p><ul class="features"><li>Mobile-friendly layout</li><li>Light/dark mode &amp; themes</li><li>Interactive animations</li></ul><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></article>
+          </div>
+
+          <article class="resume-card reveal" id="resumeCard">
+            <div class="resume-top"><div><p class="eyebrow">MY RESUME</p><h3>Quick Resume</h3></div><span class="resume-dot"></span></div>
+            <p class="resume-hint">Click the button to type out my resume.</p>
+            <button class="btn primary resume-button" id="resumeButton" type="button" aria-controls="resumeTerminal" aria-expanded="false">View Resume <span>→</span></button>
+            <div class="resume-terminal" id="resumeTerminal" aria-live="polite">
+              <div class="terminal-bar"><span></span><span></span><span></span><b>resume.txt</b></div>
+              <div class="terminal-content"><span id="resumeTyping"></span><span class="typing-cursor">▌</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+        <section class="section" id="interests">
+      <div class="container">
+        <div class="section-heading reveal"><p class="eyebrow">BEYOND THE CODE</p><h2>Things I enjoy</h2></div>
+        <div class="interest-grid"><div class="interest reveal"><b>💻</b><h3>Technology</h3><p>Exploring new tools and how systems work.</p></div><div class="interest reveal"><b>✈️</b><h3>Travel</h3><p>Discovering new places and cultures.</p></div><div class="interest reveal"><b>🏀</b><h3>Sports</h3><p>Staying active and building teamwork.</p></div><div class="interest reveal"><b>🎮</b><h3>Games</h3><p>Strategy, creativity, and fun.</p></div><div class="interest reveal"><b>📚</b><h3>Learning</h3><p>Always practicing and improving.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-box reveal">
+        <div>
+          <p class="eyebrow">GET IN TOUCH</p>
+          <h2>Let's connect.</h2>
+          <p>If you would like to discuss a project, collaboration, or technology topic, feel free to send a message.</p>
+        </div>
+        <form id="contactForm">
+          <label>Name<input type="text" id="name" placeholder="Your name" required></label>
+          <label>Email<input type="email" id="email" placeholder="your@email.com" required></label>
+          <label>Message<textarea id="message" rows="5" placeholder="Write your message..." required></textarea></label>
+          <button class="btn primary" type="submit">Send Message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Kylie Gwen Caser. All rights reserved.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+  <button class="chat-fab" id="chatFab" aria-label="Open AI assistant" aria-expanded="false"><span class="chat-fab-icon">✦</span><span class="chat-fab-label">Ask AI</span></button>
+  <section class="chat-panel" id="chatPanel" aria-label="AI assistant" aria-hidden="true">
+    <header class="chat-head"><div class="chat-avatar">✦</div><div><strong>Ask Kylie's AI</strong><small><i></i> Online · replies instantly</small></div><button class="chat-close" id="chatClose" aria-label="Close chat">✕</button></header>
+    <div class="chat-body" id="chatBody" aria-live="polite"></div>
+    <div class="chat-chips" id="chatChips"><button type="button">Who is Kylie?</button><button type="button">What are your skills?</button><button type="button">Tell me about your projects</button><button type="button">How can I contact you?</button></div>
+    <div class="chat-form"><input type="text" id="chatInput" placeholder="Ask me anything about Kylie..." maxlength="300" autocomplete="off"><button type="button" id="chatSend" aria-label="Send">➤</button></div>
+  </section>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
